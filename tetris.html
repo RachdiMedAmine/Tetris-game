@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style (2).css" type="text/css">
+    <link rel="icon" href="images/tetris.png" type="image/png">
+    <title>Tetris Game</title>
+    <style>
+        #backgroundMusic {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="clickSound" src="Audio/select.mp3" preload="auto" style="display: none;"></audio>
+
+    <audio id="backgroundMusic" autoplay loop >
+        <source src="Audio/Tetris 99 - Main Theme.mp3" type="audio/mp3">
+
+    </audio>
+    <audio id="moveSound" src="Audio/pop.mp3" preload="auto" style="display: none;"></audio>
+    <audio id="gameover-sound" src="Audio/Luigi version of SMS Game over Pink screen.mp3" preload="auto" style="display: none;"></audio>
+    <audio id="rowFilledSound" src="Audio/audiomass-output.mp3" preload="auto" style="display: none;"></audio>
+
+
+
+
+    <script>
+        var backgroundMusic = document.getElementById('backgroundMusic');
+        backgroundMusic.volume = 0.1;
+    </script>
+<div class="all_container">
+    <div id="game-container" class="gameContainer">
+        <canvas id="tetris" width="300" height="660"></canvas>
+        <div class="game-over-overlay" id="game-over-overlay" style="display: none;">---GAME OVER---</div>
+    </div>
+
+<div id="box" class="box-side">
+    <br/>
+    <img src="images/628a738ebc2ec7ad957f4072.png" alt="tetris logo" width="100%"/>
+    
+    <div id="score" class="score">Score: 0</div>
+    <div id="level" class="level">Level: 1</div>
+    <div class="instructions-box">
+    <p>→ : Move Right</p>
+    <p>← : Move Left</p>
+    <p>↓ : Move Down</p>
+    <p>SPACE : Rotate</p>
+    <p>ESC : Pause</p>
+    </div>
+    
+    <div class="button-container">
+    <button id="pauseBtn" onclick="togglePause"style="height:41px;width: 104px;" class="button_tetris hoverable">Pause</button>
+    <button id="restartBtn" onclick="restartGame()"style="height:41px;width: 104px;" class="button_tetris hoverable">Restart</button>
+    <button onclick=quit() style="height:41px;width: 104px;" class="button_tetris hoverable">QUIT</button>
+    <div class="button_audio_container">
+        <button class="button_audio" onclick="toggleMusic()"><img id="volumeIcon" src="images/volume-off.png" alt="volume icon" style="width: 40px;"></button>
+    </div>
+    
+</div>
+</div>
+
+
+<script src="tetrominoes.js"></script>
+<script src="tetris.js"></script>
+<script src="music.js"></script>
+
+</body>
+
+</html>

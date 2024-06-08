@@ -1,0 +1,197 @@
+body {
+    background: linear-gradient(45deg, #6562ff, #a6dcef, #f4acb7);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.all_container{
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+    color: #3498db;
+}
+
+button {
+    background-color: #7a1ff1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hoverable:hover {
+    background-color: #5d06ce;
+    box-shadow: 0 0 15px 5px #903cff;
+}
+.game-over-overlay{
+    position: relative;
+    top:-500px;
+    background-color: red;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+    font-size: 240%;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+canvas {
+    display: block;
+    border: 5px solid #26008d;
+    border-radius: 5px;
+    animation: slideIn 0.5s ease-in-out;
+    z-index: 0;
+}
+
+#score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    transition: transform 0.3s ease;
+}
+
+.score-change {
+    animation: scoreChange 0.3s ease-in-out;
+}
+
+@keyframes scoreChange {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+.gameContainer {
+position: relative;
+top:0px;
+left:0px;
+overflow-x: hidden;
+}
+.big-container {
+    position: relative;
+}
+
+
+#gameOverText {
+font-size: 24px;
+color: red;
+margin-bottom: 10px;
+}
+
+#restartBtn {
+padding: 5px 10px;
+cursor: pointer;
+}
+#pauseBtn {
+    background-color: #7a1ff1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#pauseBtn:hover {
+    background-color: #5d06ce;
+}
+.box-side {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    max-height:670px;
+    width: 250px;
+    height: 620px;
+    border: 5px solid #26008d;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    padding-top: 10px;
+    align-items: center;
+    
+    
+
+}
+.preview-box{
+    width:55%;
+    height:100px;
+    border: 5px solid #26008d;
+    border-radius: 5px;
+}
+.instructions-box{
+    align-items: center;
+    font-size: 20px;
+}
+.game-over{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.level {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    transition: transform 0.3s ease;
+}
+
+
+.button_audio_container{
+    align-items: center;
+    margin-top: 5px;
+    
+}
+.button_audio {
+    position:relative;
+    left:15%;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: transparent;
+    
+}
+.button_audio:hover {
+    transform: scale(1.1);
+    transition: transform 0.6s ease; 
+    background-color: transparent;
+    /*Lorsque l'utilisateur survole le bouton audio, il subit une transformation 
+    d'échelle (scale) de 1.1, ce qui agrandit légèrement sa taille. La transition 
+    est animée sur une période de 0.6 secondes avec une fonction d'accélération (ease).*/
+}
+
+.button_audio img {
+    transition: opacity 0.6s ease;
+}
+
+.button_audio:hover img {
+    opacity: 0.7; 
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="icon" href="images/tetris.png" type="image/png">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+</head>
+<body>
+    <audio id="backgroundMusic"  controls autoplay loop style="display: none;" >
+        <source src="Audio/Menu.mp3" type="audio/mp3"  >
+    </audio>
+    <audio id="hoverSound" src="Audio/hover.mp3" preload="auto" style="display: none;"></audio>
+    <audio id="buttonPressSound" src="Audio/select.mp3" preload="auto" style="display: none;"></audio>
+
+
+    
+    <div class="menu_container" id="menu">
+        <img src="images/628a738ebc2ec7ad957f4072.png" alt="logo tetris"/>
+        <br/>
+    </br/>
+        <button onclick="window.location.href='tetris.html'" class="button_menu">Start Game</button>
+        <button onclick="instructions()"class="button_menu">Instructions</button>
+        <button onclick="historytetris()"class="button_menu">About Tetris</button>
+        <div class="button_audio_container">
+            <button class="button_audio" onclick="toggleMusic()"><img id="volumeIcon" src="images/volume-off.png" alt="volume icon" style="width: 40px;"></button>
+        </div>
+        <p>Elabore Par Rachdi Med Amine et Ghada Bouaziz</p>
+    </div>
+    <div class="instruction_box" id="instructions" style="display: none;">
+        <p>→ : Move Right</p> <br/><br/>
+        <p>← : Move Left</p> <br/><br/>
+        <p>↓ : Move Down</p><br/><br/>
+        <p>SPACE : Rotate</p>   <br/>
+        <button onclick="back_to_menu()" class="button_menu">Back to Menu</button>
+     </div>
+     <div class="histoire" id="history" style="display: none;">
+        <img src="images/images.jpeg" alt="Alexi" width="100%" style="max-height: 50%;"/>
+        <p>
+            La genèse du jeu Tetris remonte à 1984 lorsque le développeur russe Alexey Pajitnov a créé ce jeu de puzzle emblématique basé sur le concept de polyominos.
+            Depuis ses modestes débuts en Union Soviétique, Tetris a conquis le monde entier pour devenir l'un des jeux vidéo les plus célèbres et joués de tous les temps.
+            Son succès a été renforcé par des adaptations sur diverses plateformes, notamment la version Game Boy en 1989, contribuant à sa renommée mondiale.
+            Aujourd'hui, Tetris est un incontournable du monde du jeu vidéo, transcendant les générations et les frontières.
+            En recréant ce classique avec HTML, CSS et JavaScript, nous espérons capturer l'esprit intemporel de Tetris tout en offrant une expérience nouvelle et accessible aux joueurs.
+            Bienvenue dans cette aventure nostalgique et amusante, prêts à relever le défi du Tetris nouvelle génération!
+        </p>
+        <button onclick="back_to_menu()" class="button_menu">Back to Menu</button>
+        
+    </div>
+    
+    <audio id="Audio" loop autoplay muted>
+        <source src="Audio/Track 1 - Tetris Ultimate (OST).mp3" type="audio/mp3">
+    </audio>
+     <script src="Menu.js"></script>
+     <script src="music.js"></script>
+    
+</body>
+</html>
